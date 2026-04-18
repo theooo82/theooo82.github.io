@@ -20,7 +20,6 @@
             overflow-x: hidden;
         }
         
-        /* Purple Stars Animation */
         .star {
             position: fixed;
             background: radial-gradient(circle, #c084fc, #a855f7);
@@ -32,20 +31,10 @@
         }
         
         @keyframes floatStar {
-            0% {
-                transform: translateY(100vh) rotate(0deg);
-                opacity: 0;
-            }
-            10% {
-                opacity: 0.7;
-            }
-            90% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(-10vh) rotate(360deg);
-                opacity: 0;
-            }
+            0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.7; }
+            90% { opacity: 0.7; }
+            100% { transform: translateY(-10vh) rotate(360deg); opacity: 0; }
         }
         
         .container {
@@ -152,27 +141,6 @@
             margin-bottom: 1rem;
         }
         
-        .contact-info {
-            margin: 2rem 0;
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            color: #ddd;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .contact-item:hover {
-            color: #c084fc;
-        }
-        
         footer {
             margin-top: 3rem;
             padding-top: 2rem;
@@ -181,31 +149,79 @@
         }
         
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
-            .tagline {
-                font-size: 0.9rem;
-            }
-            body {
-                padding: 30px 15px;
-            }
+            h1 { font-size: 2rem; }
+            .tagline { font-size: 0.9rem; }
+            body { padding: 30px 15px; }
         }
+
+        /* ── Terminal Contact ── */
+        .contact-terminal {
+            max-width: 560px;
+            margin: 2.5rem auto 0;
+            text-align: left;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid #2e2e2e;
+        }
+
+        .terminal-bar {
+            background: #1e1e1e;
+            border-bottom: 1px solid #2e2e2e;
+            padding: 0.6rem 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .t-dot { width: 12px; height: 12px; border-radius: 50%; }
+        .t-dot-red    { background: #ff5f57; }
+        .t-dot-yellow { background: #febc2e; }
+        .t-dot-green  { background: #28c840; }
+
+        .terminal-win-title {
+            font-family: 'Courier New', monospace;
+            font-size: 0.72rem;
+            color: #555;
+            margin-left: auto;
+            letter-spacing: 0.04em;
+        }
+
+        .terminal-body {
+            background: #0d0d0d;
+            padding: 1.25rem 1.5rem 1.75rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.85rem;
+            line-height: 2;
+        }
+
+        .t-line { display: block; }
+        .t-prompt { color: #c084fc; }
+        .t-cmd    { color: #e8e8e8; }
+        .t-key    { color: #666; }
+        .t-val    { color: #e8e8e8; }
+        .t-link   { color: #00e5ff; text-decoration: none; }
+        .t-link:hover { text-decoration: underline; }
+        .t-indent { padding-left: 2ch; }
+
+        .t-cursor {
+            display: inline-block;
+            width: 0.5em;
+            height: 1em;
+            background: #c084fc;
+            vertical-align: text-bottom;
+            animation: t-blink 1s step-end infinite;
+            margin-left: 1px;
+        }
+        @keyframes t-blink { 0%,100%{opacity:1} 50%{opacity:0} }
     </style>
 </head>
 <body>
-    <!-- Purple Stars Animation -->
+    <!-- Stars -->
     <div class="star" style="width: 4px; height: 4px; left: 10%; animation-duration: 8s; animation-delay: 0s;"></div>
     <div class="star" style="width: 6px; height: 6px; left: 20%; animation-duration: 12s; animation-delay: 2s;"></div>
     <div class="star" style="width: 3px; height: 3px; left: 30%; animation-duration: 6s; animation-delay: 1s;"></div>
@@ -246,7 +262,6 @@
         </div>
         
         <div class="projects">
-            <!-- Project 1: Roblox Slots Game -->
             <div class="project-card">
                 <h3>🎰 Untitled Slots - Roblox Game</h3>
                 <p>A simple but exciting slot machine game on Roblox where players spin slots and gain money. Features interactive gameplay, rewards system, and engaging UI.</p>
@@ -255,12 +270,9 @@
                         🎮 Play on Roblox
                     </a>
                 </div>
-                <p style="margin-top: 10px; font-size: 0.75rem; color: #888;">
-                    Game ID: 18538583051 | Created by @BigBules_OnTop
-                </p>
+                <p style="margin-top: 10px; font-size: 0.75rem; color: #888;">Game ID: 18538583051 | Created by @BigBules_OnTop</p>
             </div>
             
-            <!-- Project 2: Ethical Hacker Certificate -->
             <div class="project-card">
                 <h3>🏆 Certified Ethical Hacker (CEH)</h3>
                 <p>Professional certification in ethical hacking and penetration testing. Validates skills in identifying vulnerabilities, exploitation techniques, and security assessment methodologies.</p>
@@ -269,11 +281,9 @@
                         📜 View Certificate →
                     </a>
                 </div>
-                <p style="margin-top: 10px; font-size: 0.75rem; color: #888;">
-                    Issued: Ethical Hacking Certification | Cybersecurity Credential
-                </p>
+                <p style="margin-top: 10px; font-size: 0.75rem; color: #888;">Issued: Ethical Hacking Certification | Cybersecurity Credential</p>
             </div>
-       <!-- Project 3: Nova Browser -->
+
             <div class="project-card">
                 <h3>🌐 Nova Browser</h3>
                 <p>A minimal, dark-themed web browser built with Python, PyQt5, and WebEngine. Features tabbed browsing, a clean interface, and smooth navigation.</p>
@@ -282,252 +292,31 @@
                         🔗 View on GitHub →
                     </a>
                 </div>
-                <p style="margin-top: 10px; font-size: 0.75rem; color: #888;">
-                    Built with PyQt5 + WebEngine | Open source
-                </p>
-            </div>
-
-            <div class="contact-info">
-            <a href="mailto:vadoluris666@gmail.com" class="contact-item">
-                📧 vadoluris666@gmail.com
-            </a>
-            <a href="https://github.com/theooo82" target="_blank" class="contact-item">
-                🐙 GitHub
-            </a>
-            <a href="https://www.linkedin.com/in/theo-t-4864233b6/" target="_blank" class="contact-item">
-                💼 LinkedIn
-            </a>
-        </div>
-
-    <!-- Popup Modal -->
-    <div id="contactModal" class="modal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h2>📱 Get In Touch</h2>
-            </div>
-            <div class="modal-body">
-                <p style="margin-bottom: 20px;">Choose how to contact me:</p>
-                <div class="contact-details-popup">
-                    <div class="contact-card" onclick="copyToClipboard('vadoluris666@gmail.com')">
-                        <i>📧</i>
-                        <div class="label">EMAIL</div>
-                        <div class="value">vadoluris666@gmail.com</div>
-                        <button class="copy-btn">Copy Email</button>
-                    </div>
-                    
-                    <div class="contact-card" onclick="copyToClipboard('+1234567890')">
-                        <i>📞</i>
-                        <div class="label">PHONE</div>
-                        <div class="value">+1 (562) 610-8511</div>
-                        <button class="copy-btn">Copy Number</button>
-                    </div>
-                </div>
-                <button class="close-modal" onclick="closeModal()">Close</button>
+                <p style="margin-top: 10px; font-size: 0.75rem; color: #888;">Built with PyQt5 + WebEngine | Open source</p>
             </div>
         </div>
+
+        <!-- Terminal Contact -->
+        <div class="contact-terminal">
+            <div class="terminal-bar">
+                <div class="t-dot t-dot-red"></div>
+                <div class="t-dot t-dot-yellow"></div>
+                <div class="t-dot t-dot-green"></div>
+                <span class="terminal-win-title">theo@th30hz: ~/contact</span>
+            </div>
+            <div class="terminal-body">
+                <span class="t-line"><span class="t-prompt">theo@th30hz</span><span class="t-cmd"> ~ % </span><span class="t-cmd">cat contact.txt</span></span>
+                <span class="t-line t-indent"><span class="t-key">email    </span><a class="t-link" href="mailto:vadoluris666@gmail.com">vadoluris666@gmail.com</a></span>
+                <span class="t-line t-indent"><span class="t-key">github   </span><a class="t-link" href="https://github.com/theooo82" target="_blank">github.com/theooo82</a></span>
+                <span class="t-line t-indent"><span class="t-key">linkedin </span><a class="t-link" href="https://www.linkedin.com/in/theo-t-4864233b6/" target="_blank">linkedin.com/in/theo-t</a></span>
+                <span class="t-line t-indent"><span class="t-key">phone    </span><a class="t-link" href="tel:+15626108511">+1 (562) 610-8511</a></span>
+                <span class="t-line" style="margin-top: 0.3rem;"><span class="t-prompt">theo@th30hz</span><span class="t-cmd"> ~ % </span><span class="t-cursor"></span></span>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2025 Theo Ray · TH30hz</p>
+        </footer>
     </div>
-    
-    <div id="toast" class="toast">Copied to clipboard!</div>
-    
-    <style>
-        /* Popup Modal Styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0,0,0,0.8);
-            animation: fadeIn 0.3s;
-        }
-        
-        .modal-content {
-            background: linear-gradient(135deg, #0a0a1a 0%, #000000 100%);
-            margin: 15% auto;
-            padding: 0;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 400px;
-            box-shadow: 0 5px 30px rgba(192,132,252,0.3);
-            animation: slideIn 0.3s;
-            border: 1px solid #c084fc;
-        }
-        
-        .modal-header {
-            padding: 20px;
-            background: linear-gradient(135deg, #c084fc, #a855f7);
-            border-radius: 15px 15px 0 0;
-            color: #000;
-            text-align: center;
-        }
-        
-        .modal-header h2 {
-            margin: 0;
-            font-size: 1.5rem;
-        }
-        
-        .modal-body {
-            padding: 30px;
-            text-align: center;
-        }
-        
-        .contact-details-popup {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        
-        .contact-card {
-            background: rgba(192,132,252,0.1);
-            padding: 15px;
-            border-radius: 10px;
-            transition: transform 0.3s;
-            cursor: pointer;
-            border: 1px solid rgba(192,132,252,0.3);
-        }
-        
-        .contact-card:hover {
-            background: rgba(192,132,252,0.2);
-            transform: translateX(5px);
-            border-color: #c084fc;
-        }
-        
-        .contact-card i {
-            font-size: 2rem;
-            display: block;
-            margin-bottom: 10px;
-        }
-        
-        .contact-card .label {
-            font-size: 0.8rem;
-            color: #c084fc;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .contact-card .value {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-top: 5px;
-            word-break: break-all;
-        }
-        
-        .copy-btn {
-            background: #c084fc;
-            color: #000;
-            border: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            margin-top: 10px;
-            cursor: pointer;
-            font-size: 0.8rem;
-            transition: all 0.3s;
-        }
-        
-        .copy-btn:hover {
-            background: #a855f7;
-            color: white;
-        }
-        
-        .close-modal {
-            background: #a855f7;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            margin-top: 20px;
-            font-size: 1rem;
-            transition: all 0.3s;
-        }
-        
-        .close-modal:hover {
-            background: #c084fc;
-            transform: scale(1.05);
-            color: #000;
-        }
-        
-        .toast {
-            visibility: hidden;
-            min-width: 250px;
-            background-color: #c084fc;
-            color: #000;
-            text-align: center;
-            border-radius: 5px;
-            padding: 10px;
-            position: fixed;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1001;
-            font-weight: bold;
-        }
-        
-        .toast.show {
-            visibility: visible;
-            animation: fadeInOut 2s;
-        }
-        
-        @keyframes slideIn {
-            from {
-                transform: translateY(-100px);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-        
-        @keyframes fadeInOut {
-            0% { opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-    </style>
-    
-    <script>
-        // Get modal element
-        var modal = document.getElementById("contactModal");
-        
-        // Open modal when clicking Get In Touch button
-        function openModal() {
-            modal.style.display = "block";
-        }
-        
-        // Close modal
-        function closeModal() {
-            modal.style.display = "none";
-        }
-        
-        // Copy to clipboard function
-        function copyToClipboard(text) {
-            navigator.clipboard.writeText(text).then(function() {
-                var toast = document.getElementById("toast");
-                toast.className = "toast show";
-                setTimeout(function() {
-                    toast.className = "toast";
-                }, 2000);
-            });
-        }
-        
-        // Close modal when clicking outside
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
-            }
-        }
-        
-        // Prevent modal from closing when clicking inside
-        if (document.querySelector('.modal-content')) {
-            document.querySelector('.modal-content').addEventListener('click', function(event) {
-                event.stopPropagation();
-            });
-        }
-    </script>
 </body>
 </html>
